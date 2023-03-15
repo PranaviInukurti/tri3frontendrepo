@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand:wght@300&family=Shantell+Sans:wght@300&family=Tilt+Warp&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    </head>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            background-color: black;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', sans-serif;
+            font-size: 100px;
+            font-weight: lighter;
+            color: white;
+        }
+
+        h2 {
+            font-family: 'Tilt Warp', sans-serif;
+            font-size: 30px;
+            color: white;
+        }
+
+        h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 20px;
+            font-weight: lighter;
+            color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #home-background-1 {
+            height: 2000px;
+            width: 100%;
+            background-image: linear-gradient(to right, royalblue, purple);
+        }
+
+        .get-started-button {
+            height: 35px;
+            width: 250px;
+            border-radius: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 20px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            transition-duration: 1.5s;
+        }
+
+        .get-started-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        #home-background-2 {
+            position: relative;
+            background-repeat: no-repeat;
+        }
+
+        .home-background-2-image, .home-background-2-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .home-background-2-image {
+            height: 900px;
+            background-image: url("https://images.pexels.com/photos/12883026/pexels-photo-12883026.jpeg?auto=compress&cs=tinysrgb&w=2000");
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .home-background-2-overlay {
+            height: 900px;
+            background-color: gray;
+            opacity: 0.1;
+            z-index: 2;
+        }
+
+        .home-background-2-content {
+            height: 900px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .home-background-3-background {
+            height: 450px;
+            width: 100%;
+            position: absolute;
+            background-color: #6c6c6a;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .home-background-3-content {
+            height: 450px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: row;
+        }
+
+    </style>
+    <body>
+        <div id = "home-background-1">
+            <div id = "home-background-2">
+                <div class = "home-background-2-image"></div>
+                <div class = "home-background-2-overlay"></div>
+                <div class = "home-background-2-content">
+                    <div id = "navbar-content" style = "margin: 0;"></div>
+                    <div style = "height: 730px; width: 100%; position: relative; top: 70px; display: flex; flex-direction: row;">
+                        <div style = "height: 100%; width: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <h1 style = "margin: 0; text-align: center;">Mortlingo</h1>
+                        </div>
+                        <div style = "height: 100%; width: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+                        </div>
+                    </div>
+                    <!--<button class = "get-started-button">Get Started</button>-->
+                </div>
+            </div>
+            <div class = "home-background-3-background"></div>
+            <div class = "home-background-3-content">
+                <div style = "height: 450px; width: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <h2>Accelerated Coding Track</h2>
+                    <div style = "width: 550px; text-align: center;">
+                        <h3>Here at Mortlingo, we strive to help our clients learn the ins and outs of basic computer science data structures, using an effective curriculum that implements both in-depth lessons and hands-on learning</h3>
+                    </div>
+                </div>
+                <div style = "height: 450px; width: 50%; display: flex; justify-content: center; align-items: center;">
+                    <img src = "/assets/images/mort-mascot.png" width = "400px">
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function() {
+                $("#navbar-content").load("/layouts/navbar.html");
+            })
+        </script>
+    </body>
+</html>
