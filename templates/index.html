@@ -3,9 +3,7 @@
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand:wght@300&family=Shantell+Sans:wght@300&family=Tilt+Warp&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     </head>
     <style>
@@ -14,12 +12,12 @@
             margin: 0;
             background-color: black;
             font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
         }
 
         h1 {
-            font-family: 'Playfair Display', sans-serif;
+            font-family: 'Roboto', sans-serif;
             font-size: 100px;
-            font-weight: lighter;
             color: white;
         }
 
@@ -43,7 +41,7 @@
         #home-background-1 {
             height: 2000px;
             width: 100%;
-            background-image: linear-gradient(to right, royalblue, purple);
+            background-color: #282828;
         }
 
         .get-started-button {
@@ -66,77 +64,125 @@
             color: black;
         }
 
-        #home-background-2 {
-            position: relative;
-            background-repeat: no-repeat;
-        }
-
-        .home-background-2-image, .home-background-2-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-        }
-
-        .home-background-2-image {
-            height: 900px;
-            background-image: url("https://images.pexels.com/photos/12883026/pexels-photo-12883026.jpeg?auto=compress&cs=tinysrgb&w=2000");
-            background-position: center center;
-            background-attachment: fixed;
-            background-size: cover;
-            background-repeat: no-repeat;
-            z-index: 1;
-        }
-
-        .home-background-2-overlay {
-            height: 900px;
-            background-color: gray;
-            opacity: 0.1;
-            z-index: 2;
-        }
-
-        .home-background-2-content {
-            height: 900px;
-            position: relative;
-            z-index: 3;
-        }
-
-        .home-background-3-background {
-            height: 450px;
+        .home-sub-background-1 {
+            height: 700px;
             width: 100%;
-            position: absolute;
-            background-color: #6c6c6a;
-            opacity: 0.6;
-            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .home-background-3-content {
-            height: 450px;
-            width: 100%;
+        .home-title {
             position: relative;
             z-index: 2;
+            margin-top: 0px;
+        }
+
+        .home-sub-background-2 {
+            height: 500px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slideshow-container {
+            height: 80%;
             display: flex;
             flex-direction: row;
+            align-items: center;
         }
+
+        .slideshow-image {
+            height: 100%;
+            width: 600px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-left: 50px;
+            background-color: white;
+        }
+
+        .slideshow-navigation {
+            height: 60px;
+            width: 100%;
+            margin-left: 225px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: absolute;
+        }
+
+        #prev, #next {
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            background-color: gray;
+        }
+
+        #prev {
+            position: absolute;
+            left: 20px;
+        }
+
+        #next {
+            position: absolute;
+            right: 20px;
+        }
+
 
     </style>
     <body>
         <div id = "home-background-1">
-            <div id = "home-background-2">
+            <div id = "navbar-content"></div>
+            <div class = "home-sub-background-1">
+                <h1 style = "margin: 0;" class = "home-title">Mortlingo</h1>
+                <div style = "width: 700px; display: flex; flex-direction: row; position: relative; left: 150px;">
+                    <h1 class = "home-title">Learn.</h1>
+                    <h1 class = "home-title">Code.</h1>
+                </div>
+                <div style = "width: 700px; display: flex; flex-direction: row; position: relative; left: 150px;">
+                    <h1 class = "home-title">Apply.</h1>
+                    <h1 class = "home-title">Repeat.</h1>
+                </div>
+                <img src = "/assets/images/computer1.png" style = "position: absolute; left: 5%; z-index: 1;" width = "700px;">
+            </div>
+            <div class = "home-sub-background-2">
+                <h2>How Mortlingo Works</h2>
+                <div class = "slideshow-container">
+                    <div class = "slideshow-image" style = "background-image: url(https://images.pexels.com/photos/268351/pexels-photo-268351.jpeg?auto=compress&cs=tinysrgb&w=1000)"></div>
+                    <div class = "slideshow-image" style = "background-image: url(https://images.pexels.com/photos/268351/pexels-photo-268351.jpeg?auto=compress&cs=tinysrgb&w=1000)"></div>
+                    <div class = "slideshow-image" style = "background-image: url(https://images.pexels.com/photos/268351/pexels-photo-268351.jpeg?auto=compress&cs=tinysrgb&w=1000)"></div>
+                    <div class = "slideshow-navigation">
+                        <div id = "prev"></div>
+                        <div id = "next"></div>
+                    </div>
+                </div>
+            </div>
+            <!--<div id = "home-background-2">
                 <div class = "home-background-2-image"></div>
                 <div class = "home-background-2-overlay"></div>
                 <div class = "home-background-2-content">
                     <div id = "navbar-content" style = "margin: 0;"></div>
-                    <div style = "height: 730px; width: 100%; position: relative; top: 70px; display: flex; flex-direction: row;">
+                    <div style = "height: 930px; width: 100%; position: relative; top: 70px; display: flex; flex-direction: row;">
+                        <div style = "height: 100%; width: 90%; display: flex; justify-content: center; align-items: center;">
+                            <h1 style = "font-family: 'Quicksand', sans-serif; position: relative; top: -300px; left: 100px;">Code</h1>
+                            <h1 style = "font-family: 'Quicksand', sans-serif; font-size: 120px; position: relative; top: -300px; left: 600px;">Code</h1>
+                            <h1 style = "font-family: 'Quicksand', sans-serif; position: relative; top: -300px; left: -50px;">Code</h1>
+                            <h1 style = "font-family: 'Quicksand', sans-serif; font-size: 120px; position: relative; top: 0px; left: -50px;">Literally.</h1>
+                        </div>
+                    </div>
+                    <div style = "height: 930px; width: 100%;display: flex; flex-direction: row; position: relative; top: 70px;">
                         <div style = "height: 100%; width: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                            <h1 style = "margin: 0; text-align: center;">Mortlingo</h1>
+                            <h1 style = "font-family: 'Quicksand', sans-serif;">Test</h1>
                         </div>
                         <div style = "height: 100%; width: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
 
                         </div>
                     </div>
-                    <!--<button class = "get-started-button">Get Started</button>-->
+                    <button class = "get-started-button">Get Started</button>
                 </div>
             </div>
             <div class = "home-background-3-background"></div>
@@ -150,7 +196,7 @@
                 <div style = "height: 450px; width: 50%; display: flex; justify-content: center; align-items: center;">
                     <img src = "/assets/images/mort-mascot.png" width = "400px">
                 </div>
-            </div>
+            </div>-->
         </div>
         <script>
             $(function() {
